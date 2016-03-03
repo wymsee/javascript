@@ -1056,7 +1056,7 @@ Other Style Guides
     sum === 15;
     ```
 
-  - [11.2](#11.2) <a name='11.2'></a> We can use generators, but we probably won't
+  - [11.2](#11.2) <a name='11.2'></a> We probably do not want to use generators
 
 **[⬆ back to top](#table-of-contents)**
 
