@@ -323,7 +323,7 @@ Other Style Guides
     someStack.push('abracadabra');
     ```
 
-  <a name="es6-array-spreads"></a>
+  <!--<a name="es6-array-spreads"></a>
   - [4.3](#4.3) <a name='4.3'></a> Use array spreads `...` to copy arrays.
 
     ```javascript
@@ -338,7 +338,7 @@ Other Style Guides
 
     // good
     const itemsCopy = [...items];
-    ```
+    ```-->
   - [4.4](#4.4) <a name='4.4'></a> To convert an array-like object to an array, use Array#from.
 
     ```javascript
@@ -396,7 +396,7 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-## Destructuring
+<!--## Destructuring
 
   - [5.1](#5.1) <a name='5.1'></a> Use object destructuring when accessing and using multiple properties of an object. jscs: [`requireObjectDestructuring`](http://jscs.info/rule/requireObjectDestructuring)
 
@@ -461,7 +461,7 @@ Other Style Guides
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents)**-->
 
 ## Strings
 
@@ -587,7 +587,7 @@ Other Style Guides
     }
     ```
 
-  <a name="es6-rest"></a>
+  <!--<a name="es6-rest"></a>
   - [7.6](#7.6) <a name='7.6'></a> Never use `arguments`, opt to use rest syntax `...` instead. [`prefer-rest-params`](http://eslint.org/docs/rules/prefer-rest-params)
 
     > Why? `...` is explicit about which arguments you want pulled. Plus rest arguments are a real Array and not Array-like like `arguments`.
@@ -660,7 +660,7 @@ Other Style Guides
     function handleThings(name, opts = {}) {
       // ...
     }
-    ```
+    ```-->
 
   - [7.10](#7.10) <a name='7.10'></a> Never use the Function constructor to create a new function.
 
@@ -980,7 +980,7 @@ Other Style Guides
 **[⬆ back to top](#table-of-contents)**
 
 
-## Modules
+<!--## Modules
 
   - [10.1](#10.1) <a name='10.1'></a> Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
 
@@ -1027,7 +1027,7 @@ Other Style Guides
     export default es6;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents)**-->
 
 ## Iterators and Generators
 
@@ -1056,9 +1056,7 @@ Other Style Guides
     sum === 15;
     ```
 
-  - [11.2](#11.2) <a name='11.2'></a> Don't use generators for now.
-
-    > Why? They don't transpile well to ES5.
+  - [11.2](#11.2) <a name='11.2'></a> We can use generators, but we probably won't
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1583,7 +1581,7 @@ Other Style Guides
 
 ## Whitespace
 
-  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 2 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
+  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 4 spaces. eslint: [`indent`](http://eslint.org/docs/rules/indent.html) jscs: [`validateIndentation`](http://jscs.info/rule/validateIndentation)
 
     ```javascript
     // bad
@@ -1864,31 +1862,6 @@ Other Style Guides
     const foo = { clark: 'kent' };
     ```
 
-  - [18.12](#18.12) <a name='18.12'></a> Avoid having lines of code that are longer than 100 characters (including whitespace). eslint: [`max-len`](http://eslint.org/docs/rules/max-len.html) jscs: [`maximumLineLength`](http://jscs.info/rule/maximumLineLength)
-
-    > Why? This ensures readability and maintainability.
-
-    ```javascript
-    // bad
-    const foo = 'Whatever national crop flips the window. The cartoon reverts within the screw. Whatever wizard constrains a helpful ally. The counterpart ascends!';
-
-    // bad
-    $.ajax({ method: 'POST', url: 'https://airbnb.com/', data: { name: 'John' } }).done(() => console.log('Congratulations!')).fail(() => console.log('You have failed this city.'));
-
-    // good
-    const foo = 'Whatever national crop flips the window. The cartoon reverts within the screw. ' +
-      'Whatever wizard constrains a helpful ally. The counterpart ascends!';
-
-    // good
-    $.ajax({
-      method: 'POST',
-      url: 'https://airbnb.com/',
-      data: { name: 'John' },
-    })
-      .done(() => console.log('Congratulations!'))
-      .fail(() => console.log('You have failed this city.'));
-    ```
-
 **[⬆ back to top](#table-of-contents)**
 
 ## Commas
@@ -1907,7 +1880,7 @@ Other Style Guides
     const story = [
       once,
       upon,
-      aTime,
+      aTime
     ];
 
     // bad
@@ -1923,42 +1896,31 @@ Other Style Guides
       firstName: 'Ada',
       lastName: 'Lovelace',
       birthYear: 1815,
-      superPower: 'computers',
+      superPower: 'computers'
     };
     ```
 
-  - [19.2](#19.2) <a name='19.2'></a> Additional trailing comma: **Yup.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
+  - [19.2](#19.2) <a name='19.2'></a> Additional trailing comma: **Nope.** eslint: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html) jscs: [`requireTrailingComma`](http://jscs.info/rule/requireTrailingComma)
 
     > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](es5/README.md#commas) in legacy browsers.
 
     ```javascript
-    // bad - git diff without trailing comma
+    // bad - git diff with trailing comma
     const hero = {
          firstName: 'Florence',
     -    lastName: 'Nightingale'
     +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb graph', 'modern nursing']
+    +    inventorOf: ['coxcomb graph', 'modern nursing'],
     };
 
-    // good - git diff with trailing comma
+    // good - git diff without trailing comma
     const hero = {
          firstName: 'Florence',
          lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'modern nursing'],
+    +    inventorOf: ['coxcomb chart', 'modern nursing']
     };
 
     // bad
-    const hero = {
-      firstName: 'Dana',
-      lastName: 'Scully'
-    };
-
-    const heroes = [
-      'Batman',
-      'Superman'
-    ];
-
-    // good
     const hero = {
       firstName: 'Dana',
       lastName: 'Scully',
@@ -1967,6 +1929,17 @@ Other Style Guides
     const heroes = [
       'Batman',
       'Superman',
+    ];
+
+    // good
+    const hero = {
+      firstName: 'Dana',
+      lastName: 'Scully'
+    };
+
+    const heroes = [
+      'Batman',
+      'Superman'
     ];
     ```
 
@@ -2177,17 +2150,17 @@ Other Style Guides
     class CheckBox {
       // ...
     }
-    export default CheckBox;
+    module.exports = CheckBox;
 
     // in some other file
     // bad
-    import CheckBox from './checkBox';
+    require('./checkBox');
 
     // bad
-    import CheckBox from './check_box';
+    require('./check_box');
 
     // good
-    import CheckBox from './CheckBox';
+    require('./CheckBox');
     ```
 
   - [22.7](#22.7) <a name='22.7'></a> Use camelCase when you export-default a function. Your filename should be identical to your function's name.
@@ -2196,7 +2169,7 @@ Other Style Guides
     function makeStyleGuide() {
     }
 
-    export default makeStyleGuide;
+    module.exports = makeStyleGuide;
     ```
 
   - [22.8](#22.8) <a name='22.8'></a> Use PascalCase when you export a singleton / function library / bare object.
@@ -2207,7 +2180,7 @@ Other Style Guides
       }
     };
 
-    export default AirbnbStyleGuide;
+    module.exports = AirbnbStyleGuide;
     ```
 
 
@@ -2299,70 +2272,6 @@ Other Style Guides
 
   **[⬆ back to top](#table-of-contents)**
 
-
-## jQuery
-
-  - [25.1](#25.1) <a name='25.1'></a> Prefix jQuery object variables with a `$`. jscs: [`requireDollarBeforejQueryAssignment`](http://jscs.info/rule/requireDollarBeforejQueryAssignment)
-
-    ```javascript
-    // bad
-    const sidebar = $('.sidebar');
-
-    // good
-    const $sidebar = $('.sidebar');
-
-    // good
-    const $sidebarBtn = $('.sidebar-btn');
-    ```
-
-  - [25.2](#25.2) <a name='25.2'></a> Cache jQuery lookups.
-
-    ```javascript
-    // bad
-    function setSidebar() {
-      $('.sidebar').hide();
-
-      // ...stuff...
-
-      $('.sidebar').css({
-        'background-color': 'pink'
-      });
-    }
-
-    // good
-    function setSidebar() {
-      const $sidebar = $('.sidebar');
-      $sidebar.hide();
-
-      // ...stuff...
-
-      $sidebar.css({
-        'background-color': 'pink'
-      });
-    }
-    ```
-
-  - [25.3](#25.3) <a name='25.3'></a> For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - [25.4](#25.4) <a name='25.4'></a> Use `find` with scoped jQuery object queries.
-
-    ```javascript
-    // bad
-    $('ul', '.sidebar').hide();
-
-    // bad
-    $('.sidebar').find('ul').hide();
-
-    // good
-    $('.sidebar ul').hide();
-
-    // good
-    $('.sidebar > ul').hide();
-
-    // good
-    $sidebar.find('ul').hide();
-    ```
-
-**[⬆ back to top](#table-of-contents)**
 
 
 ## ECMAScript 5 Compatibility
