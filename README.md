@@ -37,7 +37,6 @@ Other Style Guides
   1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Events](#events)
-  1. [jQuery](#jquery)
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6 Styles](#ecmascript-6-styles)
   1. [Testing](#testing)
@@ -1852,14 +1851,14 @@ Other Style Guides
     console.log(foo[0]);
     ```
 
-  - [18.11](#18.11) <a name='18.11'></a> Add spaces inside curly braces. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`disallowSpacesInsideObjectBrackets`](http://jscs.info/rule/disallowSpacesInsideObjectBrackets)
+  - [18.11](#18.11) <a name='18.11'></a> Don't add spaces inside curly braces. eslint: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html) jscs: [`disallowSpacesInsideObjectBrackets`](http://jscs.info/rule/disallowSpacesInsideObjectBrackets)
 
     ```javascript
     // bad
-    const foo = {clark: 'kent'};
+    const foo = { clark: 'kent' };
 
     // good
-    const foo = { clark: 'kent' };
+    const foo = {clark: 'kent'};
     ```
 
 **[⬆ back to top](#table-of-contents)**
